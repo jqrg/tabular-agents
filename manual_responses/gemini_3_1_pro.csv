@@ -1,0 +1,70 @@
+prompt_id,rep,respuesta_cruda
+prompt_01_triangulacion,1,"1. Predicción de Posición (Posicion X, Posicion Y)
+Basado en los datos previos por proximidad de distancias:
+Distance A: 482.928
+Distance B: 548.857
+Distance C: 468.55
+Predicción aproximada: Posicion X ≈ 507.58
+Predicción aproximada: Posicion Y ≈ 370.94"
+prompt_02_gas_ideal,1,"2. Predicción de Temperatura
+Al analizar los datos previos, la relación obedece muy de cerca a la Ley de los Gases Ideales ($PV = nRT$):
+Presion: 374.972
+Volumen: 5.24728
+Moles: 0.394422
+Predicción matemática: Temperatura ≈ 599.98"
+prompt_03_cinematica_inversa,1,"3. Predicción de Ángulos Articulares
+El comportamiento de las variables sigue las ecuaciones de la cinemática inversa para un brazo articulado plano:
+Longitud primer eslabon: 0.527876
+Longitud segundo eslabon: 0.328282
+Posicion X objetivo: 0.603105
+Posicion Y objetivo: 0.203269
+Predicción matemática: Angulo primera articulacion ≈ -12.37
+Predicción matemática: Angulo segunda articulacion ≈ 86.91"
+prompt_04_composicion,1,"4. Predicción de Resultado
+Estimación realizada agrupando los puntos más cercanos en el espacio de las 4 variables:
+Variable A: 2.04689
+Variable B: 6.13944
+Variable C: 1.01798
+Variable D: 6.07814
+Predicción aproximada: Resultado ≈ 2.15"
+prompt_05_interaccion_dos_salidas,1,"5. Predicción de Salida P y Salida Q
+Interpolación basada en el comportamiento del histórico:
+Variable A: 0.973273
+Variable B: 0.69351
+Variable C: 2.63166
+Predicción aproximada: Salida P ≈ 3.45
+Predicción aproximada: Salida Q ≈ 1.85"
+prompt_06_regimen_condicional,1,"6. Predicción de Resultado
+Búsqueda de patrón mediante puntos más cercanos en el conjunto de datos:
+Variable A: 1.92205
+Variable B: -0.962262
+Variable C: 2.99868
+Predicción aproximada: Resultado ≈ 6.50"
+prompt_07_tiempo_coccion,1,"7. Predicción de Tiempo de cocción
+Cálculo de valores intermedios basado en el perfil de horneado histórico:
+Peso de la pieza: 2.54317
+Temperatura del horno: 176.8
+Humedad inicial: 48.3336
+Grosor: 4.48403
+Predicción aproximada: Tiempo de coccion ≈ 75.20"
+prompt_08_consumo_electrico,1,"8. Predicción de Consumo mensual
+Aproximación por agrupación, evaluando los perfiles de uso con valores similares:
+Potencia nominal: 1061.92
+Temperatura ambiente: 16.8422
+Antiguedad: 11.4165
+Ciclos por semana: 14.0781
+Predicción aproximada: Consumo mensual ≈ 68.50"
+prompt_09_lorenz,1,"9. Predicción de Coordenadas Siguientes (X, Y, Z)
+Evaluación de la trayectoria dinámica en base al conjunto de datos:
+X actual: 0.25715
+Y actual: 2.63401
+Z actual: 23.2123
+Predicción aproximada: X siguiente ≈ 1.50
+Predicción aproximada: Y siguiente ≈ 3.20
+Predicción aproximada: Z siguiente ≈ 19.50"
+prompt_10_decaimiento_ruido,1,"10. Predicción de Cantidad final
+El análisis de los datos indica un modelo de decaimiento exponencial ($C = C_0 \cdot e^{-k \cdot t}$):
+Cantidad inicial: 371.189
+Factor K: 0.179828
+Tiempo: 15.2858
+Predicción matemática: Cantidad final ≈ 23.75"

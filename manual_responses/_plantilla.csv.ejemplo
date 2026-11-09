@@ -1,0 +1,4 @@
+prompt_id,rep,respuesta_cruda
+prompt_01_triangulacion,1,"Analizando los datos por trilateración... la respuesta es
+Posicion X = 470.2, Posicion Y = 415.8"
+prompt_01_triangulacion,2,"X=469.1 e Y=414.3"

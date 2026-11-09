@@ -1,0 +1,38 @@
+prompt_id,rep,respuesta_cruda
+prompt_01_triangulacion,1,"1. Triangulación — el ajuste con distancias al cuadrado da R²≈1 (fórmula de trilateración exacta)
+
+Posición X ≈ 468.80
+Posición Y ≈ 414.00"
+prompt_02_gas_ideal,1,"2. Gas ideal — se confirma PV=nRT con R constante ≈0.12028 (std casi nulo)
+
+Temperatura ≈ 600.01"
+prompt_03_cinematica_inversa,1,"3. Cinemática inversa — cinemática de brazo de 2 eslabones estándar (codo hacia arriba), verificado exactamente contra los 10 primeros casos
+
+Ángulo primera articulación ≈ -12.38°
+Ángulo segunda articulación ≈ 86.92°"
+prompt_04_composicion,1,"4. Composición — regresión polinómica de grado 3 (mejor validación cruzada, R²≈0.98)
+
+Resultado ≈ 2.23"
+prompt_05_interaccion_dos_salidas,1,"5. Interacción dos salidas — regresión cuadrática con interacciones (P: R²≈0.98, Q: R²≈0.90)
+
+Salida P ≈ 3.27
+Salida Q ≈ 1.74"
+prompt_06_regimen_condicional,1,"6. Régimen condicional — encontré la regla exacta (R²=0.9999999):
+
+Si A+B<0: R = C² − 1.5·B
+Si A+B≥0: R = C + 0.5·A²
+Para tus datos, A+B=0.96≥0 → Resultado ≈ 4.846"
+prompt_07_tiempo_coccion,1,"7. Tiempo de cocción — modelo log-log (potencia): Tiempo ∝ Peso^0.58 · Temp^-1.44 · Humedad^0.41 · Grosor^0.52 (R²≈0.99)
+
+Tiempo de cocción ≈ 76.9"
+prompt_08_consumo_electrico,1,"8. Consumo eléctrico — modelo log-log, R²≈0.99 (dominado por Potencia y Ciclos)
+
+Consumo mensual ≈ 72.6"
+prompt_09_lorenz,1,"9. Lorenz — ajusté los parámetros clásicos del atractor de Lorenz (σ≈10, ρ≈28, β≈8/3) con paso RK4 dt≈0.1 (R²≈0.9998, ¡son los parámetros clásicos del sistema!)
+
+X siguiente ≈ 1.85
+Y siguiente ≈ 3.37
+Z siguiente ≈ 18.1"
+prompt_10_decaimiento_ruido,1,"10. Decaimiento con ruido — confirma la ley de decaimiento exponencial N=N₀·e^(−kt) (R²≈0.998)
+
+Cantidad final ≈ 23.76"

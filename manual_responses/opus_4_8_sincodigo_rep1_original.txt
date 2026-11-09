@@ -1,0 +1,42 @@
+1. Triangulación → X, Y
+Es trilateración: cada distancia cumple d²ᵢ = (x−xᵢ)² + (y−yᵢ)². Restando pares se elimina el término x²+y² y quedan dos ecuaciones lineales. Ajustando los coeficientes con varias filas obtuve:
+
+d²A − d²C ≈ 600.3·x + 1599.6·y − 930102
+d²B − d²C ≈ −1059.9·x + 1460.0·y − 25845
+
+Con la consulta (d²A−d²C = 13680, d²B−d²C = 81705) y resolviendo el sistema 2×2:
+X ≈ 468, Y ≈ 414
+2. Gas ideal → Temperatura
+Ley de gases ideales: T = P·V/(n·R). De los datos se recupera R ≈ 8.314. Con P=374.972, V=5.24728, n=0.394422:
+T = 1967.58 / (0.394422·8.314) = 1967.58/3.2793
+T ≈ 600
+3. Cinemática inversa → dos ángulos
+Brazo de 2 eslabones. Con r²=x²+y²=0.40505:
+
+cos θ₂ = (r² − L₁² − L₂²)/(2L₁L₂) = 0.018632/0.34662 = 0.0538 → los datos usan la rama positiva → θ₂ ≈ 86.9°
+θ₁ = atan2(y,x) − atan2(L₂ sinθ₂, L₁+L₂ cosθ₂) = 18.63° − 31.00° → θ₁ ≈ −12.4°
+
+(Verifiqué la convención con varias filas y encaja.)
+4. Composición → Resultado (aproximado)
+No encontré una fórmula global limpia: a C~2 ni A ni B influyen (R≈C^1.05·D^0.55), pero a C pequeña aparecen efectos que rompen esa ley (hay una fila con R≈0.009). Es una composición con régimen no separable. Usando el comportamiento local alrededor de la consulta (C≈1.0, D≈6.1), donde R ≈ 3.07·C − 1.04:
+R ≈ 2.1 (estimación con incertidumbre notable, ±0.3)
+5. Interacción, dos salidas → P, Q (aproximado)
+Aquí tampoco pude cerrar la fórmula exacta: P es claramente no lineal en A (pendiente creciente) con interacciones A·C y B·C de signo no constante, así que un ajuste lineal falla groseramente. Estimo por vecinos locales alrededor de (A=0.97, B=0.69, C=2.63), usando las sensibilidades locales (dP/dB≈−0.44, dP/dA≈+3.4, dQ/dB≈+0.27):
+P ≈ 2.2, Q ≈ 1.8 (los menos fiables de todo el lote)
+6. Régimen condicional → Resultado
+Aquí sí hay patrón limpio. Para A>0 con |B| moderado (< ~1.6): R = C + ½·A². Lo verifiqué en muchísimas filas (p.ej. A=1.928,C=4.535→6.394 exacto). Los desvíos aparecen solo con A negativo grande o |B| grande. La consulta (A=1.922>0, B=−0.962 pequeño) cae justo en ese régimen:
+R = 2.999 + 0.5·(1.922²) = 2.999 + 1.847
+R ≈ 4.85
+7. Tiempo de cocción → t (aproximado)
+Modelo tipo potencia t ≈ k·Peso^0.43·Temp^−2.3·Humedad^0.28·Grosor^0.54 (ajustado con 5 filas). El exponente de temperatura sale muy fuerte y probablemente sobreajustado, así que me apoyo en el vecino casi idéntico (Peso=2.96, Temp=176.85, Hum=40.2, Gros=4.57, t=76.6) y corrijo por la humedad mayor y el peso menor de la consulta, que casi se compensan:
+t ≈ 75–77 (uso ≈76)
+8. Consumo eléctrico → Consumo mensual
+Ley de potencia bien condicionada: C ≈ 0.0059·Potencia^1.0·Temp^−0.14·Antigüedad^0.075·Ciclos^1.0 (esencialmente C ∝ Potencia·Ciclos, con leve subida por antigüedad y leve bajada por temperatura). Validé en filas fuera del ajuste (error ~3%). Para la consulta:
+ln C = 4.279 → Consumo ≈ 70–72 (los vecinos dan ~68–69; uso ≈70)
+9. Lorenz → X, Y, Z siguientes
+Es el sistema de Lorenz integrado con RK4, dt=0.1, σ=10, ρ=28, β=8/3. Confirmé estos parámetros reproduciendo una fila completa (coincide en las tres componentes). Integrando la consulta (0.25715, 2.63401, 23.2123) un paso RK4:
+X ≈ 1.85, Y ≈ 3.37, Z ≈ 18.09
+10. Decaimiento con ruido → Cantidad final
+Decaimiento exponencial con ruido aditivo: N = N₀·e^(−K·t). Lo confirmé en filas de baja incertidumbre (p.ej. N₀=450.09, K=0.1175, t=2.95 → 318.3 vs 317.9 real). Para la consulta:
+K·t = 0.179828·15.2858 = 2.749; N = 371.189·e^(−2.749) = 371.189·0.06399
+Cantidad final ≈ 23.8 (el ruido puede moverla ±3–4)

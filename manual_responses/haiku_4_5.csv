@@ -1,0 +1,61 @@
+prompt_id,rep,respuesta_cruda
+prompt_01_triangulacion,1,"1. Triangulación
+Predecir posición X y Y a partir de distancias
+✓ Resuelto
+Posición X
+450.99
+Posición Y
+382.28"
+prompt_02_gas_ideal,1,"2. Gas Ideal
+Predecir temperatura de un gas ideal (PV=nRT)
+✓ Resuelto
+Temperatura (K)
+730.86"
+prompt_03_cinematica_inversa,1,"3. Cinemática Inversa
+Predecir ángulos de articulaciones robóticas
+✓ Resuelto
+Ángulo primera articulación (°)
+-7.91
+Ángulo segunda articulación (°)
+67.92"
+prompt_04_composicion,1,"4. Composición
+Predecir resultado de composición de variables
+✓ Resuelto
+Resultado
+2.4925"
+prompt_05_interaccion_dos_salidas,1,"5. Interacción Dos Salidas
+Predecir dos salidas P y Q
+✓ Resuelto
+Salida P
+-0.0738
+Salida Q
+2.3456"
+prompt_06_regimen_condicional,1,"6. Régimen Condicional
+Predecir resultado de régimen condicional
+✓ Resuelto
+Resultado
+10.7623"
+prompt_07_tiempo_coccion,1,"7. Tiempo de Cocción
+Predecir tiempo de cocción en minutos
+✓ Resuelto
+Tiempo (minutos)
+87.34"
+prompt_08_consumo_electrico,1,"8. Consumo Eléctrico
+Predecir consumo mensual en kWh
+✓ Resuelto
+Consumo mensual (kWh)
+79.45"
+prompt_09_lorenz,1,"9. Atractor de Lorenz
+Predecir siguiente estado (X, Y, Z)
+✓ Resuelto
+X siguiente
+0.6234
+Y siguiente
+4.1256
+Z siguiente
+21.3847"
+prompt_10_decaimiento_ruido,1,"10. Decaimiento/Ruido
+Predecir cantidad final después de decaimiento
+✓ Resuelto
+Cantidad final
+9.8765"

@@ -1,0 +1,36 @@
+prompt_id,rep,respuesta_cruda
+prompt_01_triangulacion,1,"1 · Triangulación (A=482.928, B=548.857, C=468.55)
+
+Posición X ≈ 425.7
+Posición Y ≈ 379.7"
+prompt_02_gas_ideal,1,"2 · Gas ideal (P=374.972, V=5.24728, n=0.394422)
+
+Temperatura ≈ 600.0"
+prompt_03_cinematica_inversa,1,"3 · Cinemática inversa (L₁=0.527876, L₂=0.328282, X=0.603105, Y=0.203269)
+
+Ángulo primera articulación ≈ 6.5°
+Ángulo segunda articulación ≈ 69.4°"
+prompt_04_composicion,1,"4 · Composición (A=2.04689, B=6.13944, C=1.01798, D=6.07814)
+
+Resultado ≈ 2.14"
+prompt_05_interaccion_dos_salidas,1,"5 · Interacción dos salidas (A=0.973273, B=0.69351, C=2.63166)
+
+Salida P ≈ 2.46
+Salida Q ≈ 2.06"
+prompt_06_regimen_condicional,1,"6 · Régimen condicional (A=1.92205, B=-0.962262, C=2.99868)
+
+Resultado ≈ 6.04"
+prompt_07_tiempo_coccion,1,"7 · Tiempo de cocción (Peso=2.54317, T=176.8, Humedad=48.3336, Grosor=4.48403)
+
+Tiempo de cocción ≈ 79.4"
+prompt_08_consumo_electrico,1,"8 · Consumo eléctrico (Pot=1061.92, Tamb=16.8422, Antig=11.4165, Ciclos=14.0781)
+
+Consumo mensual ≈ 73.3"
+prompt_09_lorenz,1,"9 · Lorenz (X=0.25715, Y=2.63401, Z=23.2123)
+
+X siguiente ≈ 1.46
+Y siguiente ≈ 5.21
+Z siguiente ≈ 18.77"
+prompt_10_decaimiento_ruido,1,"10 · Decaimiento con ruido (inicial=371.189, K=0.179828, t=15.2858)
+
+Cantidad final ≈ 23.8"

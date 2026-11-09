@@ -1,0 +1,56 @@
+Pegado íntegro del autor (Claude Opus 4.8 CON ejecución de código, chat online, 2026-07-14):
+
+Resultados
+1 · Triangulación (A=482.928, B=548.857, C=468.55)
+
+Posición X ≈ 425.7
+Posición Y ≈ 379.7
+(k-NN, R²≈0.98)
+
+2 · Gas ideal (P=374.972, V=5.24728, n=0.394422)
+
+Temperatura ≈ 600.0
+Aquí los datos cumplen exactamente T = P·V/(n·R) con R = 8.314. Es una ley exacta, así que este valor es prácticamente seguro (el modelo ciego daba 553, peor).
+
+3 · Cinemática inversa (L₁=0.527876, L₂=0.328282, X=0.603105, Y=0.203269)
+
+Ángulo 1ª articulación ≈ 6.5°
+Ángulo 2ª articulación ≈ 69.4°
+(GBR, R²≈0.91 / 0.68; el segundo ángulo es algo menos preciso)
+
+4 · Composición (A=2.04689, B=6.13944, C=1.01798, D=6.07814)
+
+Resultado ≈ 2.14 (GBR, R²≈0.95)
+
+5 · Interacción dos salidas (A=0.973273, B=0.69351, C=2.63166)
+
+Salida P ≈ 2.46
+Salida Q ≈ 2.06
+(GBR/k-NN, R²≈0.91 / 0.83)
+
+6 · Régimen condicional (A=1.92205, B=-0.962262, C=2.99868)
+
+Resultado ≈ 6.04 (k-NN, R²≈0.88)
+
+7 · Tiempo de cocción (Peso=2.54317, T=176.8, Humedad=48.3336, Grosor=4.48403)
+
+Tiempo de cocción ≈ 79.4 (k-NN, R²≈0.87)
+
+8 · Consumo eléctrico (Pot=1061.92, Tamb=16.8422, Antig=11.4165, Ciclos=14.0781)
+
+Consumo mensual ≈ 73.3 (GBR, R²≈0.95)
+
+9 · Lorenz (X=0.25715, Y=2.63401, Z=23.2123)
+
+X siguiente ≈ 1.46
+Y siguiente ≈ 5.21
+Z siguiente ≈ 18.77
+(GBR, R²≈0.96–0.98)
+
+10 · Decaimiento con ruido (inicial=371.189, K=0.179828, t=15.2858)
+
+Cantidad final ≈ 23.8
+Los datos siguen final = inicial·e^(−K·t) más ruido (σ≈3.2). La fórmula da 23.76; ese es el valor "limpio" y lo prefiero al del modelo ciego (35.8), que se dejaba arrastrar por el ruido.
+
+Un par de notas de confianza: los casos 2 y 10 son los más sólidos porque son leyes exactas. Los de R² alto (1, 4, 8, 9) son muy fiables. El 3 (segundo ángulo), el 6 y el 7 tienen más incertidumbre, así que trátalos como estimaciones aproximadas más que como valores exactos.
+Si quieres, puedo darte también un intervalo de error aproximado para cada predicción, o exportar todo a una tabla.

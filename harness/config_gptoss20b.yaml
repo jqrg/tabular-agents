@@ -1,0 +1,39 @@
+# =============================================================================
+# Configuración paralela: gpt-oss:20b — referencia razonadora aparte de la
+# escalera de tamaño "limpia" (decisión 2026-07-09). En la evaluación
+# original solo se ejecutaron los sistemas del agente (`run --sistema`):
+# el modo directo quedó fuera del perímetro por una decisión de validez
+# (el servidor usado cargaba este modelo con un techo de contexto de 4096
+# tokens que truncaba los prompts largos del modo directo; los prompts del
+# agente son cortos y no se ven afectados).
+# Resultados en results_gptoss20b/ (los sistemas del agente se llaman igual
+# en todas las configs).
+# =============================================================================
+
+n_reps: 3            # protocolo pide 5; bajado por coste (ver config.yaml)
+timeout_s: 1800
+ollama_url: "http://localhost:11434"
+
+rutas:
+  agente: "Agente/agente.py"
+  prompts: "prompts"
+  soluciones: "prompts/soluciones.txt"
+  resultados: "results_gptoss20b"
+  manual_responses: "manual_responses"
+  perturbados: "prompts_perturbados"
+
+modelos_ollama:
+  - "gpt-oss:20b"
+
+agente:
+  model: "gpt-oss:20b"
+  configs:
+    - mode: template
+    - mode: libre
+
+prompts_perturbar:
+  - "prompt_02"
+  - "prompt_04"
+  - "prompt_09"
+
+seed_perturbaciones: 20260705

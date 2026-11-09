@@ -1,0 +1,54 @@
+GROUND TRUTH DEL DATASET (queries excluidos de los CSV - regla R1)
+Redondeo a 6 cifras significativas (R2). Queries en interpolacion (R3).
+==============================================================================
+
+prompt_01_triangulacion.txt
+  Query   : Distance A=482.928, Distance B=548.857, Distance C=468.55
+  Correcto: Posicion X=468.805, Posicion Y=413.998
+  Nota    : Control B: formula existe pero requiere anclas ocultas A=(120,80) B=(950,150) C=(420,880). LLM directo no puede aplicarla.
+
+prompt_02_gas_ideal.txt
+  Query   : Presion=374.972, Volumen=5.24728, Moles=0.394422
+  Correcto: Temperatura=600.014
+  Nota    : Control A: T = P*V/(n*R) con R=8.314. Formula plug-and-play: mide el techo por memorizacion.
+
+prompt_03_cinematica_inversa.txt
+  Query   : Longitud eslabon 1=0.527876, Longitud eslabon 2=0.328282, Posicion X objetivo=0.603105, Posicion Y objetivo=0.203269
+  Correcto: Angulo articulacion 1=-12.376, Angulo articulacion 2=86.9184
+  Nota    : Control C: formula IK clasica pero con 2 soluciones; los datos siguen SOLO la rama codo positivo (t2 en [15,160]).
+
+prompt_04_composicion.txt
+  Query   : Variable A=2.04689, Variable B=6.13944, Variable C=1.01798, Variable D=6.07814
+  Correcto: Resultado=2.13969
+  Nota    : Sin formula: f = sin(2A)*exp(-B/5) + log(1+C^2)*sqrt(D) + 0.3*A*C. Nombres genericos.
+
+prompt_05_interaccion_dos_salidas.txt
+  Query   : Variable A=0.973273, Variable B=0.69351, Variable C=2.63166
+  Correcto: Salida P=3.94261, Salida Q=2.51311
+  Nota    : Sin formula, 2 salidas: P = A*C - B^2 + 2*tanh(A+B); Q = C*exp(-|A-B|/2) + A*B/3.
+
+prompt_06_regimen_condicional.txt
+  Query   : Variable A=1.92205, Variable B=-0.962262, Variable C=2.99868
+  Correcto: Resultado=4.84582
+  Nota    : Sin formula, piecewise oculto: si A+B>0 -> 0.5*A^2+C; si no -> -1.5*B+C^2. Query en rama A+B>0.
+
+prompt_07_tiempo_coccion.txt
+  Query   : Peso de la pieza=2.54317, Temperatura del horno=176.8, Humedad inicial=48.3336, Grosor=4.48403
+  Correcto: Tiempo de coccion=73.8965
+  Nota    : Empirico inventado (no corresponde a ninguna formula real): t = 15*peso^0.75*(185/T)^1.8*(1+0.004*hum*grosor)+6*sqrt(grosor).
+
+prompt_08_consumo_electrico.txt
+  Query   : Potencia nominal=1061.92, Temperatura ambiente=16.8422, Antiguedad=11.4165, Ciclos por semana=14.0781
+  Correcto: Consumo mensual=70.6303
+  Nota    : Empirico inventado: kWh = (pot/1000)*ciclos*4.33*(0.8+0.015*antig)*(1+0.0008*(temp-22)^2)*1.1.
+
+prompt_09_lorenz.txt
+  Query   : X actual=0.25715, Y actual=2.63401, Z actual=23.2123
+  Correcto: X siguiente=1.91375, Y siguiente=3.29606, Z siguiente=18.0857
+  Nota    : Mapa de Lorenz (sigma=10, rho=28, beta=8/3), RK4, horizonte 0.1. Regresion multi-output (3 salidas) de un paso.
+
+prompt_10_decaimiento_ruido.txt
+  Query   : Cantidad inicial=371.189, Factor K=0.179828, Tiempo=15.2858
+  Correcto: Cantidad final=23.7573
+  Nota    : y = A0*exp(-K*t) + N(0,3). Ground truth = valor esperado sin ruido. Suelo de error teorico MAE ~ 2.39 (=sigma*sqrt(2/pi)).
+

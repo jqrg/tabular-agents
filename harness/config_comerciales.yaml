@@ -1,0 +1,28 @@
+# =============================================================================
+# Configuración de la tanda de modelos comerciales (recogida manual).
+# Solo sistemas manual_* (autodescubiertos de manual_responses/*.csv); sin
+# modelos Ollama ni agente. Decisión del autor (2026-07-13): n_reps=1 para
+# comerciales — las celdas no tienen variabilidad entre repeticiones.
+# =============================================================================
+n_reps: 1
+timeout_s: 1800
+ollama_url: "http://localhost:11434"   # no se usa (sin sistemas Ollama)
+
+rutas:
+  agente: "Agente/agente.py"
+  prompts: "prompts"
+  soluciones: "prompts/soluciones.txt"
+  resultados: "results_comerciales"
+  manual_responses: "manual_responses"
+  perturbados: "prompts_perturbados"
+
+# Sin modo directo local ni agente en esta tanda.
+modelos_ollama: []
+
+agente:
+  model: "llama3.2:3b"   # no se usa (configs vacío)
+  configs: []
+
+# Sin robustez para comerciales (no hay respuestas perturbadas recogidas).
+prompts_perturbar: []
+seed_perturbaciones: 20260705

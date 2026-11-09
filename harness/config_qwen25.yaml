@@ -1,0 +1,33 @@
+# =============================================================================
+# Configuración paralela: parrilla completa con qwen2.5:7b.
+# Resultados en results_qwen25/ para no colisionar con la parrilla de
+# llama3.2:3b (los sistemas del agente se llaman igual en ambas).
+# =============================================================================
+
+n_reps: 3            # protocolo pide 5; bajado por coste (ver config.yaml)
+timeout_s: 1800
+ollama_url: "http://localhost:11434"
+
+rutas:
+  agente: "Agente/agente.py"
+  prompts: "prompts"
+  soluciones: "prompts/soluciones.txt"
+  resultados: "results_qwen25"
+  manual_responses: "manual_responses"
+  perturbados: "prompts_perturbados"
+
+modelos_ollama:
+  - "qwen2.5:7b"
+
+agente:
+  model: "qwen2.5:7b"
+  configs:
+    - mode: template
+    - mode: libre
+
+prompts_perturbar:
+  - "prompt_02"
+  - "prompt_04"
+  - "prompt_09"
+
+seed_perturbaciones: 20260705

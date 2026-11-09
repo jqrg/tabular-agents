@@ -1,0 +1,33 @@
+# =============================================================================
+# Configuración paralela: parrilla completa con llama3.1:8b.
+# Resultados en results_llama31/ para no colisionar con las parrillas de
+# llama3.2:3b y qwen2.5:7b (los sistemas del agente se llaman igual en todas).
+# =============================================================================
+
+n_reps: 3            # protocolo pide 5; bajado por coste (ver config.yaml)
+timeout_s: 1800
+ollama_url: "http://localhost:11434"
+
+rutas:
+  agente: "Agente/agente.py"
+  prompts: "prompts"
+  soluciones: "prompts/soluciones.txt"
+  resultados: "results_llama31"
+  manual_responses: "manual_responses"
+  perturbados: "prompts_perturbados"
+
+modelos_ollama:
+  - "llama3.1:8b"
+
+agente:
+  model: "llama3.1:8b"
+  configs:
+    - mode: template
+    - mode: libre
+
+prompts_perturbar:
+  - "prompt_02"
+  - "prompt_04"
+  - "prompt_09"
+
+seed_perturbaciones: 20260705

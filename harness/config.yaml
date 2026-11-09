@@ -1,0 +1,53 @@
+# =============================================================================
+# Configuración del harness de evaluación del TFM
+# Todas las rutas son relativas a la raíz del repositorio (donde vive harness/).
+# =============================================================================
+
+# El protocolo del Cap. 4 pide 5 reps; se baja a 3 por coste (decisión
+# registrada 07/2026). El harness es reanudable: subirlo a 5 más adelante
+# solo ejecuta las reps 4-5 que falten, sin repetir nada.
+n_reps: 3
+timeout_s: 1800      # tiempo máximo por ejecución individual (segundos)
+# URL del servidor Ollama. La evaluación original se ejecutó contra un
+# servidor remoto del grupo de investigación (anonimizado aquí): ajustar
+# a un servidor propio antes de lanzar nada.
+ollama_url: "http://localhost:11434"
+
+rutas:
+  agente: "Agente/agente.py"
+  prompts: "prompts"
+  soluciones: "prompts/soluciones.txt"
+  resultados: "results"
+  manual_responses: "manual_responses"
+  perturbados: "prompts_perturbados"
+
+# Modelos Ollama evaluados en modo directo (predicción "de cabeza", prompt
+# exacto como único mensaje de usuario, sin system prompt).
+# Antes de una tanda real, verificar que los tags existen en el servidor
+# (`ollama list` o GET /api/tags).
+# Este config cubre solo la tanda de llama3.2:3b; el resto de modelos del
+# plan multimodelo tiene su propio yaml (config_qwen25.yaml,
+# config_llama31.yaml, config_gemma3_12b.yaml, config_gptoss20b.yaml), cada
+# uno con su directorio de resultados para no colisionar.
+modelos_ollama:
+  - "llama3.2:3b"
+
+# Configuraciones del agente propio (la ablación template vs libre del estudio).
+agente:
+  model: "llama3.2:3b"  # MODEL_NAME que se exporta al agente
+  configs:
+    - mode: template
+    - mode: libre
+
+# Prompts a los que `perturb` aplica las perturbaciones de robustez P1-P6
+# (prefijos de prompt_id; protocolo del Capítulo 4). Ojo: el diseño ejecutado
+# se recortó a solo prompt_02 y prompts_perturbados/ refleja ese recorte —
+# no volver a ejecutar `perturb` si se quiere mantenerlo (regeneraría
+# también las variantes de 04/09).
+prompts_perturbar:
+  - "prompt_02"
+  - "prompt_04"
+  - "prompt_09"
+
+# Semilla base de las perturbaciones (deterministas y reproducibles).
+seed_perturbaciones: 20260705

@@ -1,0 +1,91 @@
+prompt_id,rep,respuesta_cruda
+prompt_01_triangulacion,1,"Prompt 1: Posición X y Posición Y
+Datos de entrada:
+$Distance\ A = 482.928$
+$Distance\ B = 548.857$
+$Distance\ C = 468.55$
+Análisis: El sistema corresponde a la trilateración en un plano 2D, calculando las coordenadas $(X, Y)$ a partir de las distancias a tres puntos fijos conocidos. Tras resolver la geometría de intersección de los tres círculos:
+Resultado:
+Posición X $\approx \mathbf{515.22}$
+Posición Y $\approx \mathbf{415.01}$"
+prompt_02_gas_ideal,1,"Prompt 2: Temperatura
+Datos de entrada:
+$Presion = 374.972$
+$Volumen = 5.24728$
+$Moles = 0.394422$
+Análisis: El comportamiento sigue la ecuación de los gases ideales modificada por factores de escala y constantes reales, donde $T \approx \frac{P \cdot V}{n \cdot R}$. Aplicando la constante del sistema deducida de los ejemplos:
+Resultado:
+Temperatura $\approx \mathbf{600.03}$"
+prompt_03_cinematica_inversa,1,"Prompt 3: Ángulos de articulación (Cinemática Inversa)
+Datos de entrada:
+$Longitud\ primer\ eslabon = 0.527876$
+$Longitud\ segundo\ eslabon = 0.328282$
+$Posicion\ X\ objetivo = 0.603105$
+$Posicion\ Y\ objetivo = 0.203269$
+Análisis: Es un problema clásico de cinemática inversa para un brazo robótico de 2 grados de libertad. Resolviendo la ley de los cosenos para el codo (segunda articulación) y la trigonometría para el hombro (primera articulación):
+Resultado:
+Angulo primera articulacion $\approx \mathbf{-14.93^\circ}$
+Angulo segunda articulacion $\approx \mathbf{61.99^\circ}$"
+prompt_04_composicion,1,"Prompt 4: Resultado
+Datos de entrada:
+$Variable\ A = 2.04689$
+$Variable\ B = 6.13944$
+$Variable\ C = 1.01798$
+$Variable\ D = 6.07814$
+Análisis: La relación de dependencia está fuertemente determinada por una combinación lineal de las variables, donde la influencia predominante proviene de la multiplicación o suma de ciertos componentes como $C$ y $D$.
+Resultado:
+Resultado $\approx \mathbf{3.023}$"
+prompt_05_interaccion_dos_salidas,1,"Prompt 5: Salida P y Salida Q
+Datos de entrada:
+$Variable\ A = 0.973273$
+$Variable\ B = 0.69351$
+$Variable\ C = 2.63166$
+Análisis: Siguiendo las dependencias del sistema dinámico linealizado con base en los datos históricos:
+Resultado:
+Salida P $\approx \mathbf{1.242}$
+Salida Q $\approx \mathbf{1.583}$"
+prompt_06_regimen_condicional,1,"Prompt 6: Resultado
+Datos de entrada:
+$Variable\ A = 1.92205$
+$Variable\ B = -0.962262$
+$Variable\ C = 2.99868$
+Análisis: El modelo responde a una regresión polinómica no lineal donde la variable $C$ y el término cuadrático de las variables dominan el valor final del resultado.
+Resultado:
+Resultado $\approx \mathbf{11.979}$"
+prompt_07_tiempo_coccion,1,"Prompt 7: Tiempo de cocción
+Datos de entrada:
+$Peso\ de\ la\ pieza = 2.54317$
+$Temperatura\ del\ horno = 176.8$
+$Humedad\ inicial = 48.3336$
+$Grosor = 4.48403$
+Análisis: El tiempo de cocción es proporcional al grosor y al peso, e inversamente proporcional a la temperatura, con una fuerte influencia de la humedad en el calor latente.
+Resultado:
+Tiempo de coccion $\approx \mathbf{85.02}$"
+prompt_08_consumo_electrico,1,"Prompt 8: Consumo mensual
+Datos de entrada:
+$Potencia\ nominal = 1061.92$
+$Temperatura\ ambiente = 16.8422$
+$Antiguedad = 11.4165$
+$Ciclos\ por\ semana = 14.0781$
+Análisis: El consumo mensual se calcula en función de la potencia del equipo (en kW), la cantidad de ciclos realizados por semana y pérdidas de eficiencia térmica/física por antigüedad.
+Resultado:
+Consumo mensual $\approx \mathbf{72.53}$"
+prompt_09_lorenz,1,"Prompt 9: X, Y, Z siguiente
+Datos de entrada:
+$X\ actual = 0.25715$
+$Y\ actual = 2.63401$
+$Z\ actual = 23.2123$
+Análisis: El patrón describe las ecuaciones de un sistema dinámico (atractor tridimensional similar al sistema de Lorenz o similar). Al calcular el diferencial de paso (paso de tiempo):
+Resultado:
+X siguiente $\approx \mathbf{0.835}$
+Y siguiente $\approx \mathbf{2.831}$
+Z siguiente $\approx \mathbf{18.150}$"
+prompt_10_decaimiento_ruido,1,"Prompt 10: Cantidad final
+Datos de entrada:
+$Cantidad\ inicial = 371.189$
+$Factor\ K = 0.179828$
+$Tiempo = 15.2858$
+Análisis: Este fenómeno se rige por la ley de desintegración o decaimiento exponencial: $Cantidad\ final = Cantidad\ inicial \cdot e^{-K \cdot Tiempo}$.
+$$Cantidad\ final = 371.189 \cdot e^{-(0.179828 \cdot 15.2858)} = 371.189 \cdot e^{-2.7488} = 371.189 \cdot 0.063999$$
+Resultado:
+Cantidad final $\approx \mathbf{23.756}$"

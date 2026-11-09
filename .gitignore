@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Artefactos que el agente escribe en su directorio de trabajo
+/log.csv
+/log.jsonl
+/train.csv
+/test_*.py
+
+# Salidas regenerables de `python -m harness analyze`
+results*/analysis.md
+results*/figures/
+
+
+# Por si acaso
+.venv/
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/

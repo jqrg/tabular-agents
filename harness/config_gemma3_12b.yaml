@@ -1,0 +1,34 @@
+# =============================================================================
+# Configuración paralela: parrilla completa con gemma3:12b.
+# Techo de la escalera de tamaño "limpia" (sin thinking; decisión 2026-07-09).
+# Resultados en results_gemma3_12b/ para no colisionar con las parrillas
+# anteriores (los sistemas del agente se llaman igual en todas).
+# =============================================================================
+
+n_reps: 3            # protocolo pide 5; bajado por coste (ver config.yaml)
+timeout_s: 1800
+ollama_url: "http://localhost:11434"
+
+rutas:
+  agente: "Agente/agente.py"
+  prompts: "prompts"
+  soluciones: "prompts/soluciones.txt"
+  resultados: "results_gemma3_12b"
+  manual_responses: "manual_responses"
+  perturbados: "prompts_perturbados"
+
+modelos_ollama:
+  - "gemma3:12b"
+
+agente:
+  model: "gemma3:12b"
+  configs:
+    - mode: template
+    - mode: libre
+
+prompts_perturbar:
+  - "prompt_02"
+  - "prompt_04"
+  - "prompt_09"
+
+seed_perturbaciones: 20260705

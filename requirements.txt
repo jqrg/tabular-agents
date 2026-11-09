@@ -1,0 +1,7 @@
+# Dependencias del harness (Python >= 3.10)
+pandas
+scipy
+matplotlib
+requests
+pyyaml
+pytest
