@@ -10,8 +10,8 @@ __pycache__/
 /test_*.py
 
 # Salidas regenerables de `python -m harness analyze`
-results*/analysis.md
-results*/figures/
+#results*/analysis.md
+#results*/figures/
 
 
 # Por si acaso

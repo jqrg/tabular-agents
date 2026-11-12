@@ -17,7 +17,7 @@ rutas:
   agente: "Agente/agente.py"
   prompts: "prompts"
   soluciones: "prompts/soluciones.txt"
-  resultados: "results"
+  resultados: "results_llama3_23b"
   manual_responses: "manual_responses"
   perturbados: "prompts_perturbados"
 
